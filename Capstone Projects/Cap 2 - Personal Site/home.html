@@ -28,52 +28,67 @@
         </section>
 
         <section>
-            <h2>My skills</h2>
-            <ul>
-                <li>Programming Languages</li>
-                <ul>
-                    <li>Java</li>
-                    <li>Python</li>
-                    <li>C#</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>SQL</li>
-                    <li>Bash</li>
-                </ul>
-                <li>Frameworks & Libraries</li>
-                <ul>
-                    <li>Frontend: React, Avalonia</li>
-                    <li>Backend: Flask, .NET (Entity Framework), Streamlit, JDBC</li>
-                    <li>Database: PostgreSQL, MongoDB</li>
-                    <li>AI/ML: Scikit-learn, TensorFlow, Transformers</li>
-                    <li>Other Tools: Google Colab</li>
-                </ul>
-                <li>Machine Learning Techniques</li>
-                <ul>
-                    <li>Neural Networks</li>
-                    <li>Decision Trees</li>
-                    <li>Transfer Learning</li>
-                    <li>Model Fine-tuning</li>
-                </ul>
-                <li>Development Tools & Technologies</li>
-                <ul>
-                    <li>Linux</li>
-                    <li>Git</li>
-                    <li>GitHub</li>
-                    <li>GitLab</li>
-                    <li>Visual Studio</li>
-                    <li>VS Code</li>
-                    <li>Docker</li>
-                    <li>REST APIs</li>
-                    <li>JIRA</li>
-                </ul>
-                <li>Testing & QA</li>
-                <ul>
-                    <li>Unit Testing (C# with MSTest, xUnit, Moq; Java with JUnit)</li>
-                    <li>Test-Driven Development (TDD)</li>
-                    <li>Mocking Frameworks</li>
-                </ul>
+            <h2>My Skills</h2>
+          
+            <ul class="skill-categories">
+              <li>Programming Languages</li>
+              <div class="skill-group">
+                <span class="skill-badge">Java</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">C#</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">Bash</span>
+              </div>
+          
+              <li>Frameworks & Libraries</li>
+              <div class="skill-group">
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Avalonia</span>
+                <span class="skill-badge">Flask</span>
+                <span class="skill-badge">.NET (EF)</span>
+                <span class="skill-badge">Streamlit</span>
+                <span class="skill-badge">JDBC</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">Scikit-learn</span>
+                <span class="skill-badge">TensorFlow</span>
+                <span class="skill-badge">Transformers</span>
+                <span class="skill-badge">Google Colab</span>
+              </div>
+          
+              <li>Machine Learning Techniques</li>
+              <div class="skill-group">
+                <span class="skill-badge">Neural Networks</span>
+                <span class="skill-badge">Decision Trees</span>
+                <span class="skill-badge">Transfer Learning</span>
+                <span class="skill-badge">Model Fine-tuning</span>
+              </div>
+          
+              <li>Development Tools & Technologies</li>
+              <div class="skill-group">
+                <span class="skill-badge">Linux</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">GitHub</span>
+                <span class="skill-badge">GitLab</span>
+                <span class="skill-badge">Visual Studio</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">REST APIs</span>
+                <span class="skill-badge">JIRA</span>
+              </div>
+          
+              <li>Testing & QA</li>
+              <div class="skill-group">
+                <span class="skill-badge">MSTest</span>
+                <span class="skill-badge">xUnit</span>
+                <span class="skill-badge">Moq</span>
+                <span class="skill-badge">JUnit</span>
+                <span class="skill-badge">TDD</span>
+                <span class="skill-badge">Mocking Frameworks</span>
+              </div>
             </ul>
         </section>
 
@@ -105,15 +120,18 @@
         const span = document.querySelector(".close");
       
         btn.onclick = () => {
+          modal.classList.add("show");
           modal.style.display = "block";
         }
       
         span.onclick = () => {
+          modal.classList.remove("show");
           modal.style.display = "none";
         }
       
         window.onclick = (event) => {
           if (event.target === modal) {
+            modal.classList.remove("show");
             modal.style.display = "none";
           }
         }
