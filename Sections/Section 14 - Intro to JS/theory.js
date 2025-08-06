@@ -49,6 +49,29 @@
     Example:
     var count = 0;
     count++; // Increments count by 1 (count is now 1)
-    count--; // Decrements count by 1 (count is now back to 0)
+    count--; // Decrements count by 1 (count is now back to 0) 
 
+
+    FUNCTIONS:
+
+    Functions are reusable blocks of code that perform a specific task. They can take inputs (parameters) and return an output.
+    Example:
+    function greet(name) {
+        return "Hello, " + name + "!";
+    }
+    
+    Parameters and arguments:
+    Parameters are variables listed as part of a function's definition, while arguments are the actual values passed to the function when it is called.
+    Example:
+    function add(a, b) {
+        return a + b;
+    }
+    var result = add(5, 3); // Here, 5 and 3 are arguments passed to the function 'add', which has parameters 'a' and 'b'.
+
+    Functions that give output:
+    Functions can return a value using the return statement. If no return statement is provided, the function returns undefined.
+    Example:
+    function multiply(x, y) {
+        return x * y;
+    }
 */
