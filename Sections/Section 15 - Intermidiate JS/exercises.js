@@ -50,3 +50,41 @@ function isLeap(year) {
       return("Not leap year.");   
     } 
 }
+
+//Ex 4 - Who;s buying lunch?
+function whosPaying(names) {
+    var index = Math.floor(Math.random() * names.length);
+    return names[index] + " is going to buy lunch today!"
+}
+
+//Ex 5 - while loop practice
+var numberOfBottles = 99
+while (numberOfBottles >= 0) {
+    var bottleWord = "bottle";
+    if (numberOfBottles === 1) {
+        bottleWord = "bottles";
+    } 
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
+    console.log(numberOfBottles + " " + bottleWord + " of beer,");
+    console.log("Take one down, pass it around,");
+	numberOfBottles--;
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall.");
+}
+
+//Ex 6 - Fibonacci
+function fibonacciGenerator (n) {
+    var fiboNumbers = [];
+    for (var i = 0; i < n; i++){
+        if (fiboNumbers.length === 0) {
+            fiboNumbers.push(0);
+        }
+        else if (fiboNumbers.length === 1) {
+            fiboNumbers.push(1);
+        }
+        else {
+            var nextNum = fiboNumbers[fiboNumbers.length - 1] + fiboNumbers[fiboNumbers.length - 2];
+            fiboNumbers.push(nextNum);
+        }
+    }
+    return fiboNumbers;
+}
