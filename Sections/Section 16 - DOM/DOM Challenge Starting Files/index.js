@@ -17,3 +17,25 @@ document.getElementById("title").innerHTML = "Selected by id!";
 //Example:
 document.querySelector("h2").innerHTML = "Selected by querySelector!";
 
+//Ex-2
+document.querySelector("button").style.backgroundColor = "yellow";
+
+//.classList - returns a list of all the classes that belong to a property
+//classList.add("new-class") - adds a class
+//classList.remove("class-to-remove") - removes a class
+//classList.toggle("class-to-toggle") - toggles a class on/off
+
+//Ex-3
+document.querySelector("h1").classList.add("huge");
+
+//.textContent - returns the text content of a node and its descendants
+//Example:
+var text = document.querySelector("h2").textContent;
+alert(text);
+
+//getAttribute(..) - returns the value of a specified attribute on the element
+//setAttribute(..) - sets the value of a specified attribute on the element
+//Example:
+var input = document.querySelector("input");
+input.getAttribute("type"); //returns "checkbox"
+input.setAttribute("type", "radio"); //changes the input type to "radio"
