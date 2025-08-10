@@ -1,13 +1,13 @@
 body {
-  transform: scale(0.8);
+  transform: scale(0.7);
   transform-origin: top center;
   text-align: center;
   background-color: #011F3F;
-  transition: background-color 1s ease; /* smooth background change */
+  transition: background-color 1s ease;
 }
 
 body.game-start {
-  background-color: #003366; /* New background color */
+  background-color: #003366; 
 }
 
 #level-title {
@@ -16,7 +16,7 @@ body.game-start {
   margin: 5%;
   color: #FEF2BF;
   opacity: 1;
-  transition: opacity 0.8s ease; /* smooth fade out */
+  transition: opacity 0.8s ease;
 }
 
 #level-title.fade-out {
@@ -25,7 +25,7 @@ body.game-start {
 
 #level-title button {
   font-family: 'Press Start 2P', cursive;
-  font-size: 1rem;
+  font-size: 2rem;
   background: none;
   border: 2px solid #FEF2BF;
   color: #FEF2BF;
@@ -60,6 +60,8 @@ body.game-start {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+  transform: scale(0.9);
+  transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
 #footer-text {
@@ -67,5 +69,5 @@ body.game-start {
   font-size: 2rem;
   color: #FEF2BF;
   margin-top: 40px;
-  transition: all 0.5s ease; /* smooth change when updating */
+  transition: all 0.5s ease;
 }
