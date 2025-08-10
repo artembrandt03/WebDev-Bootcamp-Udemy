@@ -71,3 +71,8 @@ body.game-start {
   margin-top: 40px;
   transition: all 0.5s ease;
 }
+
+body.game-over {
+  background-color: #8B0000; /* Dark red */
+  transition: background-color 0.5s ease;
+}
