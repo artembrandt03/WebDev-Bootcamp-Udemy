@@ -1,20 +1,46 @@
 body {
+  transform: scale(0.8);
+  transform-origin: top center;
   text-align: center;
   background-color: #011F3F;
+  transition: background-color 1s ease; /* smooth background change */
+}
+
+body.game-start {
+  background-color: #003366; /* New background color */
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
+  font-size: 2rem;
+  margin: 5%;
   color: #FEF2BF;
+  opacity: 1;
+  transition: opacity 0.8s ease; /* smooth fade out */
+}
+
+#level-title.fade-out {
+  opacity: 0;
+}
+
+#level-title button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  background: none;
+  border: 2px solid #FEF2BF;
+  color: #FEF2BF;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+#level-title button:hover {
+  background-color: #FEF2BF;
+  color: #011F3F;
 }
 
 .container {
   display: block;
   width: 50%;
   margin: auto;
-
 }
 
 .btn {
@@ -26,28 +52,20 @@ body {
   border-radius: 20%;
 }
 
-.game-over {
-  background-color: red;
-  opacity: 0.8;
-}
-
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: yellow;
-}
+.red { background-color: red; }
+.green { background-color: green; }
+.blue { background-color: blue; }
+.yellow { background-color: yellow; }
 
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+#footer-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #FEF2BF;
+  margin-top: 40px;
+  transition: all 0.5s ease; /* smooth change when updating */
 }

@@ -1,31 +1,45 @@
-//Test code to ensure the file is being loaded correctly
-//alert("test");
-
+var buttonColours = ["red", "blue", "green", "yellow"];
+var gamePattern = [];
+var userClickedPattern = [];
+var started = false;
+var level = 0; // this will be the round counter
 
 $(document).keydown(function(event) {
-    if (event.code === "Space") {
-        var randomChosenColour = buttonColours[nextSequence()];
-        gamePattern.push(randomChosenColour);
-        console.log("Game Pattern: " + gamePattern);
-        $("#" + randomChosenColour).fadeOut(150).fadeIn(150);
-        playSound(randomChosenColour);
+    if (event.code === "Space" && !started) {
+        startGame();
     }
 });
 
-// Array to hold the colours of the buttons
-var buttonColours = ["red", "blue", "green", "yellow"];
+$("#level-title button").click(function() {
+    if (!started) {
+        startGame();
+    }
+});
 
-//Array to hold the user's clicked pattern
-var userClickedPattern = [];
+function startGame() {
+    started = true;
+    level = 0;
+    $("#level-title").addClass("fade-out");
+    $("body").addClass("game-start");
 
-//Array to hold the game pattern
-var gamePattern = [];
+    setTimeout(function() {
+        $("#level-title").remove();
+        $("#footer-text").text("Round: " + level);
+        nextSequence();
+    }, 800);
+}
 
-//Creating a new pattern
 function nextSequence() {
-    // Generate a random number between 0 and 3
+    userClickedPattern = [];
+    level++;
+    $("#footer-text").text("Round: " + level);
+
     var randomNumber = Math.floor(Math.random() * 4);
-    return randomNumber;
+    var randomChosenColour = buttonColours[randomNumber];
+    gamePattern.push(randomChosenColour);
+
+    $("#" + randomChosenColour).fadeOut(150).fadeIn(150);
+    playSound(randomChosenColour);
 }
 
 function playSound(color) {
@@ -33,21 +47,8 @@ function playSound(color) {
     audio.play();
 }
 
-//Choosing a random colour & adding it to the game pattern
-var randomChosenColour = buttonColours[nextSequence()];
-gamePattern.push(randomChosenColour);
-console.log("Game Pattern: " + gamePattern);
-$("#" + randomChosenColour).fadeOut(150).fadeIn(150);
-playSound(randomChosenColour);
-
-//Using jQuery to add a click event listener to the buttons
-$("button").click(function() {
+$(".btn").click(function() {
     var userChosenColour = $(this).attr("id");
-    console.log("User Chosen Colour: " + userChosenColour);
-    playSound(userChosenColour);
-
     userClickedPattern.push(userChosenColour);
-    console.log("User Clicked Pattern: " + userClickedPattern);
-
-
-})
+    playSound(userChosenColour);
+});
