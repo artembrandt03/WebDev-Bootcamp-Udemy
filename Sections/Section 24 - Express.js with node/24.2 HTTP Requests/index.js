@@ -14,7 +14,7 @@ app.get("/about", (req, res) => {
 
 app.get("/contact", (req, res) => {
     console.log(req.rawHeaders);
-    res.send("<h1>Contact Page</h1><br><h2>My phone number is 123-456-7890</h2>");
+    res.send("<h1>Contact Page</h1><br><h2>My phone number is 123-456-7890</h2>"); 
 });
 
 app.listen(port, () => {
