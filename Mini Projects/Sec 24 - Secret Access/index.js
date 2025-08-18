@@ -17,7 +17,7 @@ const port = 3000; // Define the port to listen on
 function passwordCheck(req, res, next) { // Middleware to check password
     // Access the password from the request body
     const password = req.body.password; // Get password from form
-    if (password === "ILoveProgramming") {
+    if (password === "ILoveProgramming") {  
         req.accessGranted = true;
     } else {
         req.accessGranted = false;
